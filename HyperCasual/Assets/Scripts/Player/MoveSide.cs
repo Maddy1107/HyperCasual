@@ -21,7 +21,7 @@ public class MoveSide : Movement
             }
         }
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, LeftXlimit, RightXlimit),
-            transform.position.y, transform.position.z);
+        //transform.position = new Vector3(Mathf.Clamp(transform.position.x, LeftXlimit, RightXlimit),
+            //transform.position.y, transform.position.z);
     }
 }

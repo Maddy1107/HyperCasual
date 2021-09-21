@@ -7,9 +7,12 @@ public class Pickup : MonoBehaviour
         GameEvents.PickupObjects += PickupObjects;
     }
 
-    private void PickupObjects(string name)
+    private void PickupObjects(GameObject pickup)
     {
-        Debug.Log(name);
+        if(pickup.tag == "Alphabets")
+        {
+            GameEvents.SendAlphabetList?.Invoke(pickup.gameObject.name);
+        }
     }
 
     private void OnDisable()
@@ -19,7 +22,7 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameEvents.PickupObjects?.Invoke(other.gameObject.name);
+        GameEvents.PickupObjects?.Invoke(other.gameObject);
         Destroy(other.gameObject);
     }
 }

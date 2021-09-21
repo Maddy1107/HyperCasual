@@ -20,8 +20,13 @@ public class MoveSide : Movement
                 Move(Vector3.right);
             }
         }
+    }
 
-        //transform.position = new Vector3(Mathf.Clamp(transform.position.x, LeftXlimit, RightXlimit),
-            //transform.position.y, transform.position.z);
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "End")
+        {
+            speed = 0;
+        }
     }
 }

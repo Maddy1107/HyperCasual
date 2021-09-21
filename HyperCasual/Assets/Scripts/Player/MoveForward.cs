@@ -6,4 +6,13 @@ public class MoveForward : Movement
     {
         Move(Vector3.forward);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "End")
+        {
+            speed = 0;
+            GameEvents.onWin?.Invoke();
+        }
+    }
 }

@@ -4,8 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - CubeObs
   - Bullet
+  - End
+  - Alphabets
+  - FallBoundary
+  - Obstacle
   layers:
   - Default
   - TransparentFX

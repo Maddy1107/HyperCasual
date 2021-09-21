@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 2357958651117891240}
   - component: {fileID: 570231885112941426}
   - component: {fileID: 2279948156944416981}
-  - component: {fileID: 625091371079626309}
+  - component: {fileID: -178950374002731236}
   m_Layer: 0
   m_Name: J
-  m_TagString: Untagged
+  m_TagString: Alphabets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 172675313365439457}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.76, y: 0, z: -1.3299999}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -94,7 +94,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &625091371079626309
+--- !u!114 &-178950374002731236
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,6 +103,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 172675313365439457}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88803845558f12e4a837038b30eee7bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 81cf28bc3a5e2484aa5d46ee114ddf65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2

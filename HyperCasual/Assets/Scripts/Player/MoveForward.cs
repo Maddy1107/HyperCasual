@@ -12,7 +12,7 @@ public class MoveForward : Movement
         if(collision.gameObject.tag == "End")
         {
             speed = 0;
-            GameEvents.onWin?.Invoke();
+            GameEvents.onLevelPass?.Invoke();
         }
     }
 }

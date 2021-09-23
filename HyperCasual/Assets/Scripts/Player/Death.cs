@@ -9,7 +9,7 @@ public class Death : MonoBehaviour
 
     private void OnDeath()
     {
-        Debug.Log("Player Dead");
+        GameEvents.ShowDeathnScreen?.Invoke();
     }
 
     private void OnDisable()

@@ -9,6 +9,7 @@ TagManager:
   - Alphabets
   - FallBoundary
   - Obstacle
+  - Keys
   layers:
   - Default
   - TransparentFX

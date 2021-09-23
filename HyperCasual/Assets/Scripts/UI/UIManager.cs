@@ -1,21 +1,44 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using System.Collections;
 
 public class UIManager : MonoBehaviour
 {
-    private string alphabetCollected;
-
     public TextMeshProUGUI alphabetList;
+    public TextMeshProUGUI CountdownText;
+    public TextMeshProUGUI QuesInstruction;
 
-    List<string> CollectedAlphabets = new List<string>();
+    public Image TimeImage;
 
-    private TouchScreenKeyboard keyboard;
+    bool isLevelpass;
 
+    private float Totaltime = 10f;
+    private float Timer;
+
+    private List<string> CollectedAlphabets = new List<string>();
+
+    public GameObject keyboard;
+    public GameObject WinScreen;
+    public GameObject DeathScreen;
+
+    private void Start()
+    {
+        Timer = Totaltime;
+        isLevelpass = false;
+    }
     private void OnEnable()
     {
-        GameEvents.ShowWinScreen += ShowWinScreen;
+        GameEvents.ShowLevelPassScreen += ShowLevelPassScreen;
         GameEvents.SendAlphabetList += SendAlphabetList;
+        GameEvents.ShowWinScreen += ShowWinScreen;
+        GameEvents.ShowDeathnScreen += ShowDeathnScreen;
+    }
+
+    private void ShowDeathnScreen()
+    {
+        DeathScreen.gameObject.SetActive(true);
     }
 
     private void SendAlphabetList(string letter)
@@ -23,26 +46,63 @@ public class UIManager : MonoBehaviour
         CollectedAlphabets.Add(letter);
     }
 
+    private void ShowLevelPassScreen()
+    {
+        keyboard.gameObject.SetActive(true);
+
+        StartCoroutine(Countdown());
+
+        QuesInstruction.gameObject.SetActive(true);
+
+        GameEvents.OnKeyboard?.Invoke(CollectedAlphabets);
+    }
+
     private void ShowWinScreen()
     {
-        foreach(var n in CollectedAlphabets)
-        {
-            alphabetCollected += n;
-            alphabetCollected += ", ";
-        }
-
-        alphabetList.SetText(alphabetCollected);
-
+        WinScreen.gameObject.SetActive(true);
     }
 
     private void OnDisable()
     {
-        GameEvents.ShowWinScreen -= ShowWinScreen;
+        GameEvents.ShowLevelPassScreen -= ShowLevelPassScreen;
         GameEvents.SendAlphabetList -= SendAlphabetList;
+        GameEvents.ShowWinScreen -= ShowWinScreen;
+        GameEvents.ShowDeathnScreen -= ShowDeathnScreen;
     }
 
-    private void OnGUI()
+    private void Update()
     {
-        keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+        if (isLevelpass)
+        {
+            if(Timer <= 0)
+            {
+                Timer = Totaltime;
+                isLevelpass = false;
+                GameEvents.OnKeyboardType?.Invoke("Enter");
+            }
+            else
+            {
+                Timer -= Time.deltaTime;
+            }
+        }
+
+        TimeImage.fillAmount = Timer/Totaltime;
+    }
+
+    private IEnumerator Countdown()
+    {
+        float duration = 3f;
+        while (duration >= 0)
+        {
+            yield return new WaitForSeconds(1);
+            CountdownText.SetText(((int)duration).ToString());
+            duration--;
+        }
+        CountdownText.SetText("Go!!!");
+        yield return new WaitForSeconds(1);
+
+        TimeImage.gameObject.SetActive(true);
+        CountdownText.gameObject.SetActive(false);
+        isLevelpass = true;
     }
 }

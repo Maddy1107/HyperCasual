@@ -7,6 +7,8 @@ public class BonusLogic : MonoBehaviour
 
     private int LettermatchIndex = 0;
 
+    public ButtonManager buttonmanager;
+
     private void Start()
     {
         answers.Add(1, "LIE");

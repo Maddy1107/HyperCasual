@@ -1,18 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject Level1;
+    public GameObject Level2;
+    public GameObject Level3;
+    public GameObject Level4;
+    public GameObject Level5;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
+
 }

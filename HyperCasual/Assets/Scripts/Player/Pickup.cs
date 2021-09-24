@@ -2,6 +2,8 @@
 
 public class Pickup : MonoBehaviour
 {
+    public ParticleSystem pickupParticle;
+
     private void OnEnable()
     {
         GameEvents.PickupObjects += PickupObjects;
@@ -13,6 +15,10 @@ public class Pickup : MonoBehaviour
         {
             GameEvents.SendAlphabetList?.Invoke(pickup.gameObject.name);
         }
+        else if (pickup.tag == "Diamond")
+        {
+            GameEvents.SendOtherPickupDetailst?.Invoke("Diamonds");
+        }
     }
 
     private void OnDisable()
@@ -22,7 +28,9 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        ParticleSystem Particlepick = Instantiate(pickupParticle, transform.position, Quaternion.identity);
         GameEvents.PickupObjects?.Invoke(other.gameObject);
         Destroy(other.gameObject);
+        Destroy(Particlepick, 1);
     }
 }

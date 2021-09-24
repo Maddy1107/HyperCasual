@@ -9,6 +9,7 @@ public class Death : MonoBehaviour
 
     private void OnDeath()
     {
+        GetComponent<Animator>().SetBool("Dead", true);
         GameEvents.ShowDeathnScreen?.Invoke();
     }
 

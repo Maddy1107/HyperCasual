@@ -8,8 +8,12 @@ public class MovingCubeScript : MonoBehaviour
 
     private bool goRight = false;
 
-    private float xvalue = 0;
+    private float xvalue;
 
+    private void Start()
+    {
+        xvalue = transform.position.x;
+    }
     private void Update()
     {
         if (xvalue < LeftXlimit)

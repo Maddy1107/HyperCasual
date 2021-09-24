@@ -9,13 +9,23 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI alphabetList;
     public TextMeshProUGUI CountdownText;
     public TextMeshProUGUI QuesInstruction;
+    public TextMeshProUGUI DiamondCounterText;
+    public TextMeshProUGUI LettersCollectedText;
+    public TextMeshProUGUI LettersCollectedTitle;
+    public TextMeshProUGUI Totaldiamondscollected;
+    public TextMeshProUGUI DiamondsafterBonus;
 
     public Image TimeImage;
-
+    
     bool isLevelpass;
+
+    private string Allletters = "";
 
     private float Totaltime = 10f;
     private float Timer;
+
+    public int DiamondCounter;
+    public static int totalDiamondCounter;
 
     private List<string> CollectedAlphabets = new List<string>();
 
@@ -32,8 +42,19 @@ public class UIManager : MonoBehaviour
     {
         GameEvents.ShowLevelPassScreen += ShowLevelPassScreen;
         GameEvents.SendAlphabetList += SendAlphabetList;
+        GameEvents.SendOtherPickupDetailst += SendOtherPickupDetailst;
         GameEvents.ShowWinScreen += ShowWinScreen;
         GameEvents.ShowDeathnScreen += ShowDeathnScreen;
+    }
+
+    private void SendOtherPickupDetailst(string obj)
+    {
+        if(obj == "Diamonds")
+        {
+            DiamondCounter += 1;
+            DiamondCounterText.SetText("* " + DiamondCounter);
+            totalDiamondCounter += 1;
+        }
     }
 
     private void ShowDeathnScreen()
@@ -48,17 +69,28 @@ public class UIManager : MonoBehaviour
 
     private void ShowLevelPassScreen()
     {
+        foreach (var item in CollectedAlphabets)
+        {
+            Allletters += item;
+            Allletters += ", ";
+        }
+
+        LettersCollectedTitle.gameObject.SetActive(true);
+        LettersCollectedText.SetText(Allletters);
+
+        TimeImage.gameObject.SetActive(true);
+
         keyboard.gameObject.SetActive(true);
 
         StartCoroutine(Countdown());
 
         QuesInstruction.gameObject.SetActive(true);
 
-        GameEvents.OnKeyboard?.Invoke(CollectedAlphabets);
     }
 
-    private void ShowWinScreen()
+    private void ShowWinScreen(int bonus)
     {
+        DiamondsafterBonus.SetText(bonus.ToString());
         WinScreen.gameObject.SetActive(true);
     }
 
@@ -66,6 +98,7 @@ public class UIManager : MonoBehaviour
     {
         GameEvents.ShowLevelPassScreen -= ShowLevelPassScreen;
         GameEvents.SendAlphabetList -= SendAlphabetList;
+        GameEvents.SendOtherPickupDetailst += SendOtherPickupDetailst;
         GameEvents.ShowWinScreen -= ShowWinScreen;
         GameEvents.ShowDeathnScreen -= ShowDeathnScreen;
     }
@@ -101,7 +134,8 @@ public class UIManager : MonoBehaviour
         CountdownText.SetText("Go!!!");
         yield return new WaitForSeconds(1);
 
-        TimeImage.gameObject.SetActive(true);
+        GameEvents.OnKeyboard?.Invoke(CollectedAlphabets);
+
         CountdownText.gameObject.SetActive(false);
         isLevelpass = true;
     }

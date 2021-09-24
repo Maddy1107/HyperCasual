@@ -32,6 +32,11 @@ public class KeyboardScript : MonoBehaviour
                 break;
             }
         }
+
+        if(gameObject.name == "Enter")
+        {
+            GetComponent<Button>().interactable = true;
+        }
     }
 
     private void OnDisable()

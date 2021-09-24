@@ -1,26 +1,22 @@
 ﻿using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
-{
-    public GameObject LevelScreen;
-    public GameObject MainMenu;
-
-    [NonSerialized] public int levelid;
-
+{ 
     public void ReturnHome()
     {
-        MainMenu.gameObject.SetActive(true);
+        SceneManager.LoadScene(0);
     }
 
     public void LevelScreenOpen()
     {
-        LevelScreen.gameObject.SetActive(true);
+        SceneManager.LoadScene(1);
     }
 
     public void RestartGame()
     {
-        throw new NotImplementedException();
+        SceneManager.LoadScene(GameManager.levelid + 1);
     }
 
     public void QuitGame()
@@ -30,7 +26,6 @@ public class ButtonManager : MonoBehaviour
 
     public void PlayGame()
     {
-        MainMenu.gameObject.SetActive(false);
-        LevelScreen.gameObject.SetActive(true);
+        SceneManager.LoadScene(1);
     }
 }

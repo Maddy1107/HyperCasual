@@ -20,6 +20,12 @@ public class MoveSide : Movement
                 Move(Vector3.right);
             }
         }
+
+        Vector3 pos = transform.position;
+
+        pos.x = Mathf.Clamp(pos.x, LeftXlimit, RightXlimit);
+
+        transform.position = pos;
     }
 
     private void OnCollisionEnter(Collision collision)

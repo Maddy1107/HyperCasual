@@ -14,5 +14,9 @@ public class MoveForward : Movement
             speed = 0;
             GameEvents.onLevelPass?.Invoke();
         }
+        else if (collision.gameObject.tag == "Obstacle")
+        {
+            speed = 0;
+        }
     }
 }

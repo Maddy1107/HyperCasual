@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3252011530271961176}
   m_Layer: 0
   m_Name: FallBoundary
-  m_TagString: FallBoundary
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3252011530271961179}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.2381506, y: 3.5484333, z: 24.706871}
   m_LocalScale: {x: 9.384747, y: 1, z: 5.9244294}
   m_Children: []

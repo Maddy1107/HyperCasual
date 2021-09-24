@@ -24,7 +24,7 @@ public class KeyboardType : MonoBehaviour
         }
         else if (AnswerLetter == "Enter")
         {
-            GameEvents.Bonuscheck?.Invoke(GameManager.instance.levelid,AnswerText);
+            GameEvents.Bonuscheck?.Invoke(GameManager.levelid,AnswerText);
         }
 
         AnswerField.SetText(AnswerText);

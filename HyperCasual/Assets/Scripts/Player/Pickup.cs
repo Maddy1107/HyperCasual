@@ -28,9 +28,10 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        AudioManager.instance.Play("Pickup");
         ParticleSystem Particlepick = Instantiate(pickupParticle, transform.position, Quaternion.identity);
         GameEvents.PickupObjects?.Invoke(other.gameObject);
         Destroy(other.gameObject);
-        Destroy(Particlepick, 1);
+        Destroy(Particlepick.gameObject, 1);
     }
 }

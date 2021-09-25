@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8732332540600175519}
   m_Layer: 0
   m_Name: Cube1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5991ca37b234bfc47b03f8599c71f646, type: 2}
+  - {fileID: 2100000, guid: f92b994d36c5fbe4e9b924b886f6f526, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0e7084144acd043919c5ed74d1dead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
   axis: x
 --- !u!1 &8732332541261821663
 GameObject:
@@ -133,7 +133,7 @@ Transform:
   m_GameObject: {fileID: 8732332541261821663}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -7.126, y: 4.978, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.8052, z: 0.76721}
   m_Children:
   - {fileID: 8732332540600175518}
   - {fileID: 8732332542523999783}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 8732332542523999780}
   m_Layer: 0
   m_Name: Cube2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,5 +246,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0e7084144acd043919c5ed74d1dead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
   axis: x

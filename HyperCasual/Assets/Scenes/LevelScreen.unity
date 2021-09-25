@@ -563,7 +563,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -822,6 +822,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455044034}
   m_CullTransparentMesh: 0
+--- !u!1001 &481002327
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2771124295637376609, guid: a4b61c8a944237146b0891b5791aa2c7,
+        type: 3}
+      propertyPath: m_Name
+      value: SkyboxChanger
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771124295637376611, guid: a4b61c8a944237146b0891b5791aa2c7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771124295637376611, guid: a4b61c8a944237146b0891b5791aa2c7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 420.32013
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771124295637376611, guid: a4b61c8a944237146b0891b5791aa2c7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 174.26445
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771124295637376611, guid: a4b61c8a944237146b0891b5791aa2c7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 134.35925
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771124295637376611, guid: a4b61c8a944237146b0891b5791aa2c7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771124295637376611, guid: a4b61c8a944237146b0891b5791aa2c7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771124295637376611, guid: a4b61c8a944237146b0891b5791aa2c7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771124295637376611, guid: a4b61c8a944237146b0891b5791aa2c7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771124295637376611, guid: a4b61c8a944237146b0891b5791aa2c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771124295637376611, guid: a4b61c8a944237146b0891b5791aa2c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771124295637376611, guid: a4b61c8a944237146b0891b5791aa2c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a4b61c8a944237146b0891b5791aa2c7, type: 3}
 --- !u!1 &557672375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,7 +1321,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1492,7 +1561,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2217,7 +2286,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

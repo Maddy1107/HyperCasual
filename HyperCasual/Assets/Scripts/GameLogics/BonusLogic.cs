@@ -11,6 +11,9 @@ public class BonusLogic : MonoBehaviour
     {
         answers.Add(1, "LIE");
         answers.Add(2, "MARS");
+        answers.Add(3, "COVID");
+        answers.Add(4, "WOODY");
+        answers.Add(5, "GREECE");
     }
 
     private void OnEnable()

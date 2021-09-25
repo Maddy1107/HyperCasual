@@ -30,7 +30,7 @@ public class MoveSide : Movement
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "End")
+        if (collision.gameObject.tag == "End" || collision.gameObject.tag == "Obstacle")
         {
             speed = 0;
         }

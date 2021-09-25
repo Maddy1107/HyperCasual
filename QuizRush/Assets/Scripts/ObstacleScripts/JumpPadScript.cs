@@ -8,7 +8,7 @@ public class JumpPadScript : MonoBehaviour
         playerAnimator.SetTrigger("Jump");
 
         Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
-        rb.AddForce(new Vector3(0, 10, 0), ForceMode.Impulse);
+        rb.AddForce(new Vector3(0, 15, 0), ForceMode.Impulse);
         AudioManager.instance.Play("Bounce");
     }
 }
